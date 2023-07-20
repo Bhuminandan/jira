@@ -39,7 +39,7 @@
 }
 
 .btn:hover{
-  opacity: 0.9;
+  background-color: rgb(0, 0, 205);
 }
 
 /* Panels Styling */
@@ -63,6 +63,10 @@
   overflow-y: scroll;
 }
 
+div::-webkit-scrollbar{
+  display: none;
+}
+
 .Panel>h3{
   color: rgb(135, 135, 135);
 }
@@ -81,15 +85,18 @@
 
 .panel__task > h3{
   color: rgb(38, 38, 38);
+  word-wrap: break-word;
 }
 
 .panel__task > strong{
   color: rgb(72, 72, 72);
+  word-wrap: break-word;
 }
 
 
 .panel__task > p{
-   color: rgb(96, 95, 95);
+  color: rgb(96, 95, 95);
+  word-wrap: break-word;
 }
 
 
@@ -107,6 +114,8 @@
   justify-content: center;
 }
 
+
+
 .modal-container{
   background-color: white;
   padding: 20px;
@@ -115,9 +124,6 @@
   border-radius: 10px;
 }
 
-/* .modal__close{
-
-} */
 
 .modal__close{
   padding-top: 3px;
@@ -163,18 +169,17 @@
 
 
 
-
-
+/* Media Queries to handle Responsiveness */
 
 /* xs */
-@media (min-width: 475px) {
+@media (max-width: 475px) {
   .container {
     max-width: 475px;
   }
 }
 
 /* sm */
-@media (min-width: 640px) {
+@media (max-width: 640px) {
   .container {
     max-width: 525px;
 
@@ -192,7 +197,7 @@
 }
 
 /* lg */
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .container {
     max-width: 1024px;
   }
@@ -203,14 +208,14 @@
 }
 
 /* xL */
-@media (min-width: 1280px) {
+@media (max-width: 1280px) {
   .container {
     max-width: 1248px;
   }
 }
 
 /* 2xL */
-@media (min-width: 1536px) {
+@media (max-width: 1536px) {
   .container {
     max-width: 1536px;
   }
