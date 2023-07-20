@@ -77,11 +77,14 @@ const modalHtml = `
 
 })
 
+let count = 0;
 
 function createTask(taskObjetct){
     const taskContainer = document.createElement("div");
     taskContainer.className = "panel__task";
     taskContainer.draggable = "true";
+    taskContainer.id = `task-${count}`;
+    count++;
     taskContainer.innerHTML = `
         <h3>${taskObjetct.title}</h3>
         <strong>${taskObjetct.assignee}</strong>
@@ -89,7 +92,12 @@ function createTask(taskObjetct){
         ${taskObjetct.description}
         </p>`
 
-        const panel = document.getElementById(taskObjetct.status);
-        panel.appendChild(taskContainer);
+    const panel = document.getElementById(taskObjetct.status);
+    panel.appendChild(taskContainer);
+
+    taskContainer.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("source", taskContainer.id);
+        e.dataTransfer.setData("parent", taskContainer.parentElement.id);
+    })
 
 }
